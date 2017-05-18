@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
+import AlbumDetail from './AlbumDetail.js';
 import axios from 'axios';
 
 class AlbumList extends Component {
@@ -12,7 +13,7 @@ class AlbumList extends Component {
   }
 
   makeAlbumsList(){
-    return this.state.albums.map(singleAlbum => <Text key={singleAlbum.title}>{singleAlbum.title}</Text>);
+    return this.state.albums.map(singleAlbum => <AlbumDetail key={singleAlbum.title} album={singleAlbum}/>);
   }
 
   render() {
